@@ -4,24 +4,22 @@ import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  model:any={};
-  constructor(private userService:UserService) { }
+  model: any = {};
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  register(){
+  register() {
     this.userService.register(this.model).subscribe({
-      next: (response) =>{
-        console.log("Registration successfull");
+      next: (response) => {
+        console.log('Registration successfull');
       },
-      error: (e) =>{
-          console.error(e)
-      }
-    })
-  }
-
+      error: (e) => {
+        console.error(e);
+      },
+    });
+  } 
 }
